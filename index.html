@@ -1,0 +1,131 @@
+
+<!DOCTYPE >
+<html>
+
+<title>
+BiliTool&#153;</title>
+
+<style type="text/css" media="screen">
+		<!-- @import url( https://bilitool.org/wp-content/themes/light/style.css ); -->
+		</style>
+<link rel='dns-prefetch' href='//s.w.org' />
+		<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+	<!-- <link rel='stylesheet' id='wp-block-library-css'  href='https://bilitool.org/wp-includes/css/dist/block-library/style.min.css?ver=5.2' type='text/css' media='all' />
+<link rel='https://api.w.org/' href='https://bilitool.org/index.php?rest_route=/' />
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://bilitool.org/xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://bilitool.org/wp-includes/wlwmanifest.xml" /> 
+<meta name="generator" content="WordPress 5.2" />
+<link rel="canonical" href="https://bilitool.org/" />
+<link rel='shortlink' href='https://bilitool.org/' />
+<link rel="alternate" type="application/json+oembed" href="https://bilitool.org/index.php?rest_route=%2Foembed%2F1.0%2Fembed&#038;url=https%3A%2F%2Fbilitool.org%2F" />
+<link rel="alternate" type="text/xml+oembed" href="https://bilitool.org/index.php?rest_route=%2Foembed%2F1.0%2Fembed&#038;url=https%3A%2F%2Fbilitool.org%2F&#038;format=xml" /> -->
+
+
+</head>
+<body id="home" class="log">
+  <div id="header">
+  <div id="logo">
+<table>
+<tr>
+<td align="left" width="40%">
+<h1 id="blogname"><a href="index.html">
+      BiliTool&#153;      </a></h1>
+</td>
+</tr>
+
+</table>
+  </div>
+</div>
+<div id="wrap">
+
+<div id="content">
+<div class="entry">
+<h3 class="entrytitle" id="post-3"> <a href="https://bilitool.org/" rel="bookmark"></a></h3>
+<div class="entrybody">
+
+<form onsubmit="return myFunction();">
+  <table><tr><td align="right">
+    <strong>Age</strong> (hours):  </td>
+      <td>
+        <input name="hours" type="text" id="hours" size="6" maxlength="3"> (12-146 hours)</td>
+      </tr>
+      <tr>
+      <td align="right"><strong>Total Bilirubin*:</strong>
+      </td>
+        <td><input name="bilirubin" type="text" id="bilirubin" size="6" maxlength="5">
+
+        <select name="units" id ="units">
+          <option value="us" selected>mg/dl (US)</option>
+          <option value="si">&#181mol/L (SI)</option>
+        </select>
+
+      <input type="submit" name="Submit" value="Submit">
+      </td>
+      </tr>
+    </table>
+</form>
+
+
+<p>*Note: The default <i>unit of measure</i> for total bilirubin is <strong>mg/dl</strong>. Please select <strong>&#181mol/L</strong> if your bilirubin values are captured in the global standard SI metric units. Bilirubin conversion from US to SI units is 17.1.
+</p>
+
+<script>
+  function myFunction() {
+    if(document.getElementById("hours").value == ""){
+      alert("Please enter a value for the age in hours.");
+      return false;
+    }
+    if(document.getElementById("bilirubin").value == ""){
+      alert("Please enter a value for the total bilirubin.");
+      return false;
+    }
+    if(document.getElementById("hours").value < 12 || document.getElementById("hours").value > 146){
+      alert("Please enter a value for the age in hours between 12 and 146 hours.");
+      return false;
+    }
+    if(document.getElementById("bilirubin").value < 0 || document.getElementById("bilirubin").value > 1000){
+      alert("Please enter a value for the total bilirubin between 0 and 1000 mg/dl.");
+      return false;
+    }
+
+
+    var hours = document.getElementById("hours").value;
+    var bilirubin = document.getElementById("bilirubin").value;
+    var units = document.getElementById("units").value;
+    if(units == "us"){
+      bilirubin = bilirubin;
+    } else {
+      bilirubin = bilirubin / 17.1;
+    }
+
+  if( bilirubin >= 0 && bilirubin < ((-0.000705503 * hours * hours) + (0.183112 * hours) +1.41564)) {
+    window.location.href = "low.html";
+    return false;
+  } else if( bilirubin >= ((-0.000705503 * hours * hours) + (0.183112 * hours) +1.41564) && bilirubin < ((-0.000987412*hours*hours)+(0.235244*hours)+1.77249)) {
+    window.location.href = "lowInter.html";
+    return false;
+  } else if( bilirubin >= ((-0.000987412*hours*hours)+(0.235244*hours)+1.77249) && bilirubin < ((-0.00112323*hours*hours)+(0.255148*hours)+3.39424)) {
+    window.location.href = "highInter.html";
+    return false;
+  } else if( bilirubin >= ((-0.00112323*hours*hours)+(0.255148*hours)+3.39424) && bilirubin < 25) {  
+    window.location.href = "high.html";
+    return false;
+  }
+  }
+</script>
+</div>
+</body>
+</html>
