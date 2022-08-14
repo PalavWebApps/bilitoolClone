@@ -58,12 +58,12 @@ img.emoji {
 
 <form onsubmit="return myFunction();">
   <table><tr><td align="right">
-    <strong>Age</strong> (hours):  </td>
+    <strong>आयु</strong> (घंटे):  </td>
       <td>
-        <input name="hours" type="text" id="hours" size="6" maxlength="3"> (12-146 hours)</td>
+        <input name="hours" type="text" id="hours" size="6" maxlength="3"> (12-146 घंटे)</td>
       </tr>
       <tr>
-      <td align="right"><strong>Total Bilirubin*:</strong>
+      <td align="right"><strong>कुल बिलीरुबिन*:</strong>
       </td>
         <td><input name="bilirubin" type="text" id="bilirubin" size="6" maxlength="5">
 
@@ -72,37 +72,31 @@ img.emoji {
           <option value="si">&#181mol/L (SI)</option>
         </select>
 
-      <input type="submit" name="Submit" value="Submit">
+      <input type="submit" name="Submit" value="प्रस्तुत">
       </td>
       </tr>
     </table>
 </form>
 
 
-<p>*Note: The default <i>unit of measure</i> for total bilirubin is <strong>mg/dl</strong>. Please select <strong>&#181mol/L</strong> if your bilirubin values are captured in the global standard SI metric units. Bilirubin conversion from US to SI units is 17.1.
+<p>*नोट:  कुल बिलीरुबिन <i>के लिए माप की डिफ़ॉल्ट</i> इकाई  <strong>mg/dl है।</strong>. कृपया <strong>&#181mol/L</strong>  का चयन करें यदि आपके बिलीरुबिन मान वैश्विक मानक SI मीट्रिक इकाइयों में दर्ज हैं। यूएस से एसआई इकाइयों में बिलीरुबिन रूपांतरण 17.1 है।
 </p>
 
 <script>
   function myFunction() {
     if(document.getElementById("hours").value == ""){
-      alert("Please enter a value for the age in hours.");
+      alert("कृपया उम्र के लिए घंटों में एक मान दर्ज करें.");
       return false;
     }
     if(document.getElementById("bilirubin").value == ""){
-      alert("Please enter a value for the total bilirubin.");
+      alert("कृपया कुल बिलीरुबिन के लिए एक मान दर्ज करें.");
       return false;
     }
     if(document.getElementById("hours").value < 12 || document.getElementById("hours").value > 146){
-      alert("Please enter a value for the age in hours between 12 and 146 hours.");
-      return false;
-    }
-    if(document.getElementById("bilirubin").value < 0 || document.getElementById("bilirubin").value > 426){
-      alert("Please enter a value for the total bilirubin between 0 and 25 mg/dl (426 mol/L).");
+      alert("कृपया उम्र के लिए 12 से 146 घंटों के बीच के घंटों में एक मान दर्ज करें।");
       return false;
     }
 
-
-    var hours = document.getElementById("hours").value;
     var bilirubin = document.getElementById("bilirubin").value;
     var units = document.getElementById("units").value;
     if(units == "us"){
@@ -110,6 +104,14 @@ img.emoji {
     } else {
       bilirubin = bilirubin / 17.1;
     }
+
+    if(bilirubin < 0 || bilirubin > 25){
+      alert("कृपया कुल बिलीरुबिन के लिए 0 और 25 mg/dl (426 mol/L) के बीच एक मान दर्ज करें.");
+      return false;
+    }
+
+
+    var hours = document.getElementById("hours").value;
 
   if( bilirubin >= 0 && bilirubin < ((-0.000705503 * hours * hours) + (0.183112 * hours) +1.41564)) {
     window.location.href = "low.html";
