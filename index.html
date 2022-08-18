@@ -1,38 +1,23 @@
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
 
-<!DOCTYPE >
-<html>
+<head profile="http://gmpg.org/xfn/11">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta name="distribution" content="global" />
+  <meta name="robots" content="follow, all" />
+  <meta name="language" content="en" />
 
-<title>
-BiliTool&#153;</title>
+  <title>
+    BiliTool&#153; &raquo; Option Two Result</title>
 
-<style type="text/css" media="screen">
-		<!-- @import url( https://bilitool.org/wp-content/themes/light/style.css ); -->
-		</style>
-<link rel='dns-prefetch' href='//s.w.org' />
-		<style type="text/css">
-img.wp-smiley,
-img.emoji {
-	display: inline !important;
-	border: none !important;
-	box-shadow: none !important;
-	height: 1em !important;
-	width: 1em !important;
-	margin: 0 .07em !important;
-	vertical-align: -0.1em !important;
-	background: none !important;
-	padding: 0 !important;
-}
-</style>
-	<!-- <link rel='stylesheet' id='wp-block-library-css'  href='https://bilitool.org/wp-includes/css/dist/block-library/style.min.css?ver=5.2' type='text/css' media='all' />
-<link rel='https://api.w.org/' href='https://bilitool.org/index.php?rest_route=/' />
-<link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://bilitool.org/xmlrpc.php?rsd" />
-<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://bilitool.org/wp-includes/wlwmanifest.xml" /> 
-<meta name="generator" content="WordPress 5.2" />
-<link rel="canonical" href="https://bilitool.org/" />
-<link rel='shortlink' href='https://bilitool.org/' />
-<link rel="alternate" type="application/json+oembed" href="https://bilitool.org/index.php?rest_route=%2Foembed%2F1.0%2Fembed&#038;url=https%3A%2F%2Fbilitool.org%2F" />
-<link rel="alternate" type="text/xml+oembed" href="https://bilitool.org/index.php?rest_route=%2Foembed%2F1.0%2Fembed&#038;url=https%3A%2F%2Fbilitool.org%2F&#038;format=xml" /> -->
 
+  <style type="text/css" media="screen">
+    <!-- @import url( https://bilitool.org/wp-content/themes/light/style.css ); 
+    -->
+  </style>
+  </style>
+</head>
 
 </head>
 <body id="home" class="log">
@@ -58,12 +43,15 @@ img.emoji {
 
 <form onsubmit="return myFunction();">
   <table><tr><td align="right">
-    <strong>आयु</strong> (घंटे):  </td>
+    <strong>आयु</strong> 
+    (घंटे):  </td>
       <td>
-        <input name="hours" type="text" id="hours" size="6" maxlength="3"> (12-146 घंटे)</td>
+        <input name="hours" type="text" id="hours" size="6" maxlength="3"> 
+        (12-146 घंटे)</td>
       </tr>
       <tr>
-      <td align="right"><strong>कुल बिलीरुबिन*:</strong>
+      <td align="right"><strong>
+        कुल बिलीरुबिन*:</strong>
       </td>
         <td><input name="bilirubin" type="text" id="bilirubin" size="6" maxlength="5">
 
@@ -79,24 +67,31 @@ img.emoji {
 </form>
 
 
-<p>*नोट:  कुल बिलीरुबिन <i>के लिए माप की डिफ़ॉल्ट</i> इकाई  <strong>mg/dl है।</strong>. कृपया <strong>&#181mol/L</strong>  का चयन करें यदि आपके बिलीरुबिन मान वैश्विक मानक SI मीट्रिक इकाइयों में दर्ज हैं। यूएस से एसआई इकाइयों में बिलीरुबिन रूपांतरण 17.1 है।
+<p>
+  *नोट: कुल बिलीरुबिन के लिए डिफ़ॉल्ट <i>माप की इकाई</i> <strong>mg/dl</strong> है। कृपया <strong>&#181mol/L</strong> का चयन करें यदि आपके बिलीरुबिन मान वैश्विक मानक SI मीट्रिक इकाइयों में दर्ज हैं। यूएस से एसआई इकाइयों में बिलीरुबिन रूपांतरण 17.1 है
 </p>
 
 <script>
   function myFunction() {
     if(document.getElementById("hours").value == ""){
-      alert("कृपया उम्र के लिए घंटों में एक मान दर्ज करें.");
+      alert("Please enter a value for the age in hours.");
       return false;
     }
     if(document.getElementById("bilirubin").value == ""){
-      alert("कृपया कुल बिलीरुबिन के लिए एक मान दर्ज करें.");
+      alert("Please enter a value for the total bilirubin.");
       return false;
     }
     if(document.getElementById("hours").value < 12 || document.getElementById("hours").value > 146){
-      alert("कृपया उम्र के लिए 12 से 146 घंटों के बीच के घंटों में एक मान दर्ज करें।");
+      alert("Please enter a value for the age in hours between 12 and 146 hours.");
+      return false;
+    }
+    if(document.getElementById("bilirubin").value < 0 || document.getElementById("bilirubin").value > 426){
+      alert("Please enter a value for the total bilirubin between 0 and 25 mg/dl (426 mol/L).");
       return false;
     }
 
+
+    var hours = document.getElementById("hours").value;
     var bilirubin = document.getElementById("bilirubin").value;
     var units = document.getElementById("units").value;
     if(units == "us"){
@@ -104,14 +99,6 @@ img.emoji {
     } else {
       bilirubin = bilirubin / 17.1;
     }
-
-    if(bilirubin < 0 || bilirubin > 25){
-      alert("कृपया कुल बिलीरुबिन के लिए 0 और 25 mg/dl (426 mol/L) के बीच एक मान दर्ज करें.");
-      return false;
-    }
-
-
-    var hours = document.getElementById("hours").value;
 
   if( bilirubin >= 0 && bilirubin < ((-0.000705503 * hours * hours) + (0.183112 * hours) +1.41564)) {
     window.location.href = "low.html";
@@ -122,7 +109,7 @@ img.emoji {
   } else if( bilirubin >= ((-0.000987412*hours*hours)+(0.235244*hours)+1.77249) && bilirubin < ((-0.00112323*hours*hours)+(0.255148*hours)+3.39424)) {
     window.location.href = "highInter.html";
     return false;
-  } else if( bilirubin >= ((-0.00112323*hours*hours)+(0.255148*hours)+3.39424) && bilirubin < 25) {  
+  } else if( bilirubin >= ((-0.00112323*hours*hours)+(0.255148*hours)+3.39424) && bilirubin <= 25) {  
     window.location.href = "high.html";
     return false;
   }
