@@ -1,38 +1,23 @@
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
 
-<!DOCTYPE >
-<html>
+<head profile="http://gmpg.org/xfn/11">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta name="distribution" content="global" />
+  <meta name="robots" content="follow, all" />
+  <meta name="language" content="en" />
 
-<title>
-BiliTool&#153;</title>
+  <title>
+    BiliTool&#153; &raquo; Option Two Result</title>
 
-<style type="text/css" media="screen">
-		<!-- @import url( https://bilitool.org/wp-content/themes/light/style.css ); -->
-		</style>
-<link rel='dns-prefetch' href='//s.w.org' />
-		<style type="text/css">
-img.wp-smiley,
-img.emoji {
-	display: inline !important;
-	border: none !important;
-	box-shadow: none !important;
-	height: 1em !important;
-	width: 1em !important;
-	margin: 0 .07em !important;
-	vertical-align: -0.1em !important;
-	background: none !important;
-	padding: 0 !important;
-}
-</style>
-	<!-- <link rel='stylesheet' id='wp-block-library-css'  href='https://bilitool.org/wp-includes/css/dist/block-library/style.min.css?ver=5.2' type='text/css' media='all' />
-<link rel='https://api.w.org/' href='https://bilitool.org/index.php?rest_route=/' />
-<link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://bilitool.org/xmlrpc.php?rsd" />
-<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://bilitool.org/wp-includes/wlwmanifest.xml" /> 
-<meta name="generator" content="WordPress 5.2" />
-<link rel="canonical" href="https://bilitool.org/" />
-<link rel='shortlink' href='https://bilitool.org/' />
-<link rel="alternate" type="application/json+oembed" href="https://bilitool.org/index.php?rest_route=%2Foembed%2F1.0%2Fembed&#038;url=https%3A%2F%2Fbilitool.org%2F" />
-<link rel="alternate" type="text/xml+oembed" href="https://bilitool.org/index.php?rest_route=%2Foembed%2F1.0%2Fembed&#038;url=https%3A%2F%2Fbilitool.org%2F&#038;format=xml" /> -->
 
+  <style type="text/css" media="screen">
+    <!-- @import url( https://bilitool.org/wp-content/themes/light/style.css ); 
+    -->
+  </style>
+  </style>
+</head>
 
 </head>
 <body id="home" class="log">
@@ -58,12 +43,15 @@ img.emoji {
 
 <form onsubmit="return myFunction();">
   <table><tr><td align="right">
-    <strong>Age</strong> (hours):  </td>
+    <strong>आयु</strong> 
+    (घंटे):  </td>
       <td>
-        <input name="hours" type="text" id="hours" size="6" maxlength="3"> (12-146 hours)</td>
+        <input name="hours" type="text" id="hours" size="6" maxlength="3"> 
+        (12-146 घंटे)</td>
       </tr>
       <tr>
-      <td align="right"><strong>Total Bilirubin*:</strong>
+      <td align="right"><strong>
+        कुल बिलीरुबिन*:</strong>
       </td>
         <td><input name="bilirubin" type="text" id="bilirubin" size="6" maxlength="5">
 
@@ -72,14 +60,15 @@ img.emoji {
           <option value="si">&#181mol/L (SI)</option>
         </select>
 
-      <input type="submit" name="Submit" value="Submit">
+      <input type="submit" name="Submit" value="प्रस्तुत">
       </td>
       </tr>
     </table>
 </form>
 
 
-<p>*Note: The default <i>unit of measure</i> for total bilirubin is <strong>mg/dl</strong>. Please select <strong>&#181mol/L</strong> if your bilirubin values are captured in the global standard SI metric units. Bilirubin conversion from US to SI units is 17.1.
+<p>
+  *नोट: कुल बिलीरुबिन के लिए डिफ़ॉल्ट <i>माप की इकाई</i> <strong>mg/dl</strong> है। कृपया <strong>&#181mol/L</strong> का चयन करें यदि आपके बिलीरुबिन मान वैश्विक मानक SI मीट्रिक इकाइयों में दर्ज हैं। यूएस से एसआई इकाइयों में बिलीरुबिन रूपांतरण 17.1 है
 </p>
 
 <script>
@@ -120,7 +109,7 @@ img.emoji {
   } else if( bilirubin >= ((-0.000987412*hours*hours)+(0.235244*hours)+1.77249) && bilirubin < ((-0.00112323*hours*hours)+(0.255148*hours)+3.39424)) {
     window.location.href = "highInter.html";
     return false;
-  } else if( bilirubin >= ((-0.00112323*hours*hours)+(0.255148*hours)+3.39424) && bilirubin < 25) {  
+  } else if( bilirubin >= ((-0.00112323*hours*hours)+(0.255148*hours)+3.39424) && bilirubin <= 25) {  
     window.location.href = "high.html";
     return false;
   }
